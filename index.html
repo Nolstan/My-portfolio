@@ -58,8 +58,17 @@
         .stat-value {font-size:1.8rem; font-weight:700; color:var(--primary);}
         .stat-label {font-size:0.9rem; color:var(--gray);}
 
-        @media (max-width:992px) {.landing {flex-direction:column;text-align:center;padding:120px 0 80px;} .landing-content {padding-right:0; margin-bottom:50px;}}
-        @media (max-width:768px) {.landing h1 {font-size:2.5rem;} .profile-img {width:280px;height:280px;} .dashboard-grid {grid-template-columns:1fr;}}
+        /* Project card content wrapping */
+        .projects .card-content { word-break: break-word; }
+
+        @media (max-width:992px) {
+            .landing {flex-direction:column;text-align:center;padding:120px 20px 80px;} 
+            .landing-content {padding-right:0; margin-bottom:50px;}
+        }
+        @media (max-width:768px) {
+            nav {flex-direction: column; gap: 20px;}
+            .landing h1 {font-size:2.5rem;} .profile-img {width:280px;height:280px;} .dashboard-grid {grid-template-columns:1fr;}
+        }
     </style>
 </head>
 <body>
@@ -94,7 +103,7 @@
             </div>
             <div class="landing-image">
                 <div class="profile-img">
-                    <img src="Nolstan.jpg" alt="">
+                    <img src="Nolstan.jpg" alt="A profile picture of Laston">
                 </div>
             </div>
         </div>

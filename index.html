@@ -1,347 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laston - Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laston - Portfolio</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma;}
-:root{
---primary:#6C63FF;
---secondary:#4A44B5;
---dark:#2A2A3C;
---light:#F5F5F7;
---gray:#8A8A9E;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma;
+        }
 
-body{background:var(--light);color:var(--dark);overflow-x:hidden;}
-.container{max-width:1200px;margin:auto;padding:0 20px;}
+        :root {
+            --primary: #6C63FF;
+            --secondary: #4A44B5;
+            --dark: #2A2A3C;
+            --light: #F5F5F7;
+            --gray: #8A8A9E;
+        }
 
-header{
-background:white;
-box-shadow:0 2px 15px rgba(0,0,0,0.05);
-position:fixed;
-width:100%;
-top:0;
-z-index:1000;
-}
+        body {
+            background: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 0;
-}
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
 
-.logo{font-size:1.8rem;font-weight:700;color:var(--primary);}
+        header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-.nav-toggle{
-display:flex;
-gap:10px;
-background:var(--light);
-padding:8px;
-border-radius:30px;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
 
-.toggle-btn{
-padding:10px 20px;
-border-radius:20px;
-border:none;
-background:transparent;
-font-weight:600;
-cursor:pointer;
-}
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
 
-.toggle-btn.active{
-background:var(--primary);
-color:white;
-}
+        .nav-toggle {
+            display: flex;
+            gap: 10px;
+            background: var(--light);
+            padding: 8px;
+            border-radius: 30px;
+        }
 
-.page{
-display:none;
-min-height:100vh;
-padding-top:100px;
-}
+        .toggle-btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background: transparent;
+            font-weight: 600;
+            cursor: pointer;
+        }
 
-.page.active{display:block;}
+        .toggle-btn.active {
+            background: var(--primary);
+            color: white;
+        }
 
-/* LANDING */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 100px;
+        }
 
-.landing{
-padding:150px 0 100px;
-display:flex;
-align-items:center;
-min-height:100vh;
-background:linear-gradient(135deg,#f5f7fa 0%,#e4e8f0 100%);
-}
+        .page.active {
+            display: block;
+        }
 
-.landing-content{flex:1;padding-right:50px;}
+        /* LANDING */
 
-.landing-image{
-flex:1;
-display:flex;
-justify-content:center;
-align-items:center;
-}
+        .landing {
+            padding: 150px 0 100px;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        }
 
-.profile-img{
-width:350px;
-height:350px;
-border-radius:50%;
-background:linear-gradient(135deg,var(--primary),var(--secondary));
-display:flex;
-align-items:center;
-justify-content:center;
-overflow:hidden;
-box-shadow:0 15px 30px rgba(108,99,255,0.3);
-}
+        .landing-content {
+            flex: 1;
+            padding-right: 50px;
+        }
 
-.profile-img img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+        .landing-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.social-icons{
-display:flex;
-gap:20px;
-margin-top:40px;
-}
+        .profile-img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(108, 99, 255, 0.3);
+        }
 
-.social-icon{
-width:45px;
-height:45px;
-background:white;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:var(--primary);
-text-decoration:none;
-font-size:1.2rem;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
-transition:all 0.3s;
-}
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.social-icon:hover{
-background:var(--primary);
-color:white;
-transform:translateY(-5px);
-}
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
 
-.landing h1{font-size:3.5rem;margin-bottom:20px;}
-.landing h1 span{color:var(--primary);}
-.landing p{font-size:1.3rem;color:var(--gray);}
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
 
-/* DASHBOARD */
+        .social-icon:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
 
-.dashboard-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-gap:30px;
-margin-top:40px;
-}
+        .landing h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
 
-.dashboard-card{
-background:white;
-border-radius:15px;
-padding:30px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
-}
+        .landing h1 span {
+            color: var(--primary);
+        }
 
-.card-header{
-display:flex;
-align-items:center;
-margin-bottom:20px;
-}
+        .landing p {
+            font-size: 1.3rem;
+            color: var(--gray);
+        }
 
-.card-icon{
-width:50px;
-height:50px;
-background:var(--light);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-right:15px;
-color:var(--primary);
-}
+        /* DASHBOARD */
 
-.card-content a{
-color:var(--primary);
-font-weight:600;
-text-decoration:none;
-}
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
 
-/* RESPONSIVE */
+        .dashboard-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
 
-@media(max-width:992px){
-.landing{
-flex-direction:column;
-text-align:center;
-padding:120px 20px 80px;
-}
-.landing-content{
-padding-right:0;
-margin-bottom:50px;
-}
-.profile-img{
-width:280px;
-height:280px;
-}
-}
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-@media(max-width:768px){
-.landing h1{font-size:2.5rem;}
-.dashboard-grid{grid-template-columns:1fr;}
-}
-</style>
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+        }
+
+        .card-content a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:992px) {
+            .landing {
+                flex-direction: column;
+                text-align: center;
+                padding: 120px 20px 80px;
+            }
+
+            .landing-content {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+
+            .profile-img {
+                width: 280px;
+                height: 280px;
+            }
+        }
+
+        @media(max-width:768px) {
+            .landing h1 {
+                font-size: 2.5rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav-toggle {
+                width: 100%;
+                justify-content: center;
+                padding: 5px;
+            }
+
+            .toggle-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-<div class="container">
-<nav>
-<div class="logo">Welcome!</div>
-<div class="nav-toggle">
-<button class="toggle-btn active" data-page="landing">Home</button>
-<button class="toggle-btn" data-page="dashboard">Dashboard</button>
-<button class="toggle-btn" data-page="projects">Projects</button>
-</div>
-</nav>
-</div>
-</header>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Welcome!</div>
+                <div class="nav-toggle">
+                    <button class="toggle-btn active" data-page="landing">Home</button>
+                    <button class="toggle-btn" data-page="dashboard">Dashboard</button>
+                    <button class="toggle-btn" data-page="projects">Projects</button>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-<!-- HOME -->
-<section id="landing" class="page active">
-<div class="container">
-<div class="landing">
+    <!-- HOME -->
+    <section id="landing" class="page active">
+        <div class="container">
+            <div class="landing">
 
-<div class="landing-content">
-<h1>Hi,<br>I'm <span>Laston</span><br>IT Student</h1>
-<p>I am a student at Malawi University of Business and Applied Sciences</p>
+                <div class="landing-content">
+                    <h1>Hi,<br>I'm <span>Laston</span><br>IT Student</h1>
+                    <p>I am a student at Malawi University of Business and Applied Sciences</p>
 
-<div class="social-icons">
+                    <div class="social-icons">
 
-<a href="https://www.linkedin.com/in/laston-kumwenda-3a9008382" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-<a href="https://www.facebook.com/nolstan.logiic" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-<a href="https://github.com/Nolstan" class="social-icon"><i class="fab fa-github"></i></a>
-<a href="mailto:bit23-lkumwenda@mubas.ac.mw" class="social-icon"><i class="fas fa-envelope"></i></a>
-<a href="tel:+265981353135" class="social-icon"><i class="fas fa-phone"></i></a>
+                        <a href="https://www.linkedin.com/in/laston-kumwenda-3a9008382" class="social-icon"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/nolstan.logiic" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://github.com/Nolstan" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="mailto:bit23-lkumwenda@mubas.ac.mw" class="social-icon"><i
+                                class="fas fa-envelope"></i></a>
+                        <a href="tel:+265981353135" class="social-icon"><i class="fas fa-phone"></i></a>
 
-</div>
-</div>
+                    </div>
+                </div>
 
-<div class="landing-image">
-<div class="profile-img">
-<img src="Nolstan.jpg">
-</div>
-</div>
+                <div class="landing-image">
+                    <div class="profile-img">
+                        <img src="Nolstan.jpg">
+                    </div>
+                </div>
 
-</div>
-</div>
-</section>
+            </div>
+        </div>
+    </section>
 
-<!-- DASHBOARD -->
-<section id="dashboard" class="page">
-<div class="container">
-<h1>Dashboard</h1>
-<div class="dashboard-grid">
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page">
+        <div class="container">
+            <h1>Dashboard</h1>
+            <div class="dashboard-grid">
 
-<div class="dashboard-card">
-<div class="card-header"><div class="card-icon"><i class="fas fa-code"></i></div><h3>Projects</h3></div>
-<p>Built real systems solving accommodation, marketplace and academic documentation problems.</p>
-</div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-code"></i></div>
+                        <h3>Projects</h3>
+                    </div>
+                    <p>Built real systems solving accommodation, marketplace and academic documentation problems.</p>
+                </div>
 
-<div class="dashboard-card">
-<div class="card-header"><div class="card-icon"><i class="fas fa-tools"></i></div><h3>Skills</h3></div>
-<p>HTML/CSS, JavaScript, Python, SQL, MongoDB, Linux, Networking, Git</p>
-</div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-tools"></i></div>
+                        <h3>Skills</h3>
+                    </div>
+                    <p>HTML/CSS, JavaScript, Python, SQL, MongoDB, Linux, Networking, Git</p>
+                </div>
 
-<div class="dashboard-card">
-<div class="card-header"><div class="card-icon"><i class="fas fa-database"></i></div><h3>Experience</h3></div>
-<p>Worked with full stack systems, API integration and SQL database management.</p>
-</div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-database"></i></div>
+                        <h3>Experience</h3>
+                    </div>
+                    <p>Worked with full stack systems, API integration and SQL database management.</p>
+                </div>
 
-</div>
-</div>
-</section>
+            </div>
+        </div>
+    </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="page">
-<div class="container">
-<h1>My Projects</h1>
+    <!-- PROJECTS -->
+    <section id="projects" class="page">
+        <div class="container">
+            <h1>My Projects</h1>
 
-<div class="dashboard-grid">
+            <div class="dashboard-grid">
 
-<div class="dashboard-card">
-<div class="card-header"><div class="card-icon"><i class="fas fa-video"></i></div><h3>STAN-TUBE</h3></div>
-<p>Academic YouTube inspired platform for documenting and presenting technical projects.</p>
-<a href="https://nolstan.github.io/STAN-TUBE/index.html" target="_blank">View Live</a>
-</div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-video"></i></div>
+                        <h3>STAN-TUBE</h3>
+                    </div>
+                    <p>Academic YouTube inspired platform for documenting and presenting technical projects.</p>
+                    <a href="https://nolstan.github.io/STAN-TUBE/index.html" target="_blank">View Live</a>
+                </div>
 
-<div class="dashboard-card">
-<div class="card-header"><div class="card-icon"><i class="fas fa-building"></i></div><h3>FadaHouse Accommodation System</h3></div>
-<p>Full student housing platform for listings, booking and hostel management.</p>
-<a href="https://nolstan.github.io/FADA-HOUSE/" target="_blank">view Live</a><br>
-<!-- <a href="https://github.com/Nolstan/Accomodation_front-end" target="_blank">Frontend</a><br> -->
-<!-- <a href="https://github.com/Nolstan/Accomodation_back-end" target="_blank">Backend</a> -->
-</div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-building"></i></div>
+                        <h3>FadaHouse Accommodation System</h3>
+                    </div>
+                    <p>Full student housing platform for listings, booking and hostel management.</p>
+                    <a href="https://nolstan.github.io/FADA-HOUSE/" target="_blank">view Live</a><br>
+                    <!-- <a href="https://github.com/Nolstan/Accomodation_front-end" target="_blank">Frontend</a><br> -->
+                    <!-- <a href="https://github.com/Nolstan/Accomodation_back-end" target="_blank">Backend</a> -->
+                </div>
 
-<div class="dashboard-card">
-<div class="card-header"><div class="card-icon"><i class="fas fa-store"></i></div><h3>LocalMarket Platform</h3></div>
-<p>Neighborhood marketplace allowing local marketers to sell products within their community.</p>
-<a href="https://nolstan.github.io/LocalMarket-fe/index.html" target="_blank">View Live</a>
-</div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-store"></i></div>
+                        <h3>LocalMarket Platform</h3>
+                    </div>
+                    <p>Neighborhood marketplace allowing local marketers to sell products within their community.</p>
+                    <a href="https://nolstan.github.io/LocalMarket-fe/index.html" target="_blank">View Live</a>
+                </div>
 
-<div class="dashboard-card">
-<div class="card-header"><div class="card-icon"><i class="fas fa-car"></i></div><h3>Mthunzi Car Parking App</h3></div>
-<p>Parking management system for monitoring and allocating available spaces.</p>
-<a href="https://nolstan.github.io/Mthunzi-packing/" target="_blank">View Live</a>
-</div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-car"></i></div>
+                        <h3>Mthunzi Car Parking App</h3>
+                    </div>
+                    <p>Parking management system for monitoring and allocating available spaces.</p>
+                    <a href="https://nolstan.github.io/Mthunzi-packing/" target="_blank">View Live</a>
+                </div>
 
-<div class="dashboard-card">
-<div class="card-header"><div class="card-icon"><i class="fas fa-camera"></i></div><h3>Hands & Face Detection</h3></div>
-<p>Computer vision system detecting hands and faces simultaneously.</p>
-<a href="https://github.com/Nolstan/Hands-And-Face-Detector" target="_blank">View Project</a>
-</div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-camera"></i></div>
+                        <h3>Hands & Face Detection</h3>
+                    </div>
+                    <p>Computer vision system detecting hands and faces simultaneously.</p>
+                    <a href="https://github.com/Nolstan/Hands-And-Face-Detector" target="_blank">View Project</a>
+                </div>
 
-<div class="dashboard-card">
-<div class="card-header"><div class="card-icon"><i class="fas fa-terminal"></i></div><h3>Python Terminal Library</h3></div>
-<p>Command line library management system.</p>
-<a href="https://github.com/Nolstan/Python-Library" target="_blank">View Project</a>
-</div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-terminal"></i></div>
+                        <h3>Python Terminal Library</h3>
+                    </div>
+                    <p>Command line library management system.</p>
+                    <a href="https://github.com/Nolstan/Python-Library" target="_blank">View Project</a>
+                </div>
 
-<div class="dashboard-card">
-<div class="card-header"><div class="card-icon"><i class="fas fa-music"></i></div><h3>Dynamic Music Website</h3></div>
-<p>Interactive API-based music platform.</p>
-<a href="https://github.com/Nolstan/music-api-project" target="_blank">View Project</a>
-</div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-music"></i></div>
+                        <h3>Dynamic Music Website</h3>
+                    </div>
+                    <p>Interactive API-based music platform.</p>
+                    <a href="https://github.com/Nolstan/music-api-project" target="_blank">View Project</a>
+                </div>
 
-<div class="dashboard-card">
-<div class="card-header"><div class="card-icon"><i class="fas fa-vote-yea"></i></div><h3>Election Management Website</h3></div>
-<p>SQL database driven voting simulation system.</p>
-<a href="https://github.com/Nolstan/Election-website" target="_blank">View Project</a>
-</div>
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon"><i class="fas fa-vote-yea"></i></div>
+                        <h3>Election Management Website</h3>
+                    </div>
+                    <p>SQL database driven voting simulation system.</p>
+                    <a href="https://github.com/Nolstan/Election-website" target="_blank">View Project</a>
+                </div>
 
-</div>
-</div>
-</section>
+            </div>
+        </div>
+    </section>
 
-<script>
-document.querySelectorAll('.toggle-btn').forEach(button=>{
-button.addEventListener('click',function(){
-document.querySelectorAll('.toggle-btn').forEach(btn=>btn.classList.remove('active'));
-document.querySelectorAll('.page').forEach(page=>page.classList.remove('active'));
-this.classList.add('active');
-document.getElementById(this.dataset.page).classList.add('active');
-});
-});
-</script>
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById(this.dataset.page).classList.add('active');
+            });
+        });
+    </script>
 
 </body>
+
 </html>
